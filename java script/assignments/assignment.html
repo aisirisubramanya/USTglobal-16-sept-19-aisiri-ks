@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>arrays and objects</title>
+    <script>
+        var laptop={ 
+                       processor:'i5',
+                       gen:7,
+                       ram:'8GB',
+                       company:'dell'
+                   };
+        console.log('processor='+laptop.processor);
+        console.log('generation='+laptop.gen);
+        console.log('ram='+laptop.ram);
+        console.log('company='+laptop.company);          
+    </script><br>
+    <br>
+    <br>
+    <script>
+        var family=new Object();
+        family.father='subramanya';
+        family.mother='bhargavi';
+        family.grandFather='bhadrachala setty';
+        family.grandMother='sarswathi';
+        console.log('*****my family*****');
+        console.log('grand father:'+family.grandFather);
+        console.log('grand mother:'+family.grandMother);
+        console.log('appa:'+family.father);
+        console.log('amma:'+family.mother);
+        console.log('and me');
+    </script>
+</head><br>
+<br>
+<br>
+<body>
+    <script>
+        var food=['pani puri','momos','upma','dosa','idli'];
+        var i;
+        console.log('food items are')
+        for(i=0;i<food.length;i++)
+        {
+            console.log(food[i]);
+        }
+        var vegitables=new Array ();
+        vegitables[0]='tomato';
+        vegitables[1]='chilli';
+        vegitables[2]='potato';
+        vegitables[3]='sweet potato';
+        vegitables[4]='raddish';
+        console.log('vegitables are')
+        for(i=0;i<vegitables.length;i++)
+        {
+            console.log(vegitables[i]);
+        }
+
+    </script>
+    
+</body>
+</html>
