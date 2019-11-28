@@ -1,0 +1,4 @@
+#grad{
+    height: 500px;
+    background: radial-gradient(black, blue, white, lightblue, orange, red , yellow);
+}

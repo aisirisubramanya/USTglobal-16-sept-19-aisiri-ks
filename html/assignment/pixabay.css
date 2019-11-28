@@ -1,0 +1,63 @@
+img{
+    width: 250px;
+    height:250px;
+    /* border: 1px solid black; */
+    padding: 10px;
+    /* border-radius: 20px; */
+    margin-left: 10px;
+    margin-top: 10px;
+    /* box-shadow: 0 0 15px aqua; */
+    /* transition: all 2s;for zooming slow or fast */
+}
+h1{
+    text-align: start;
+    color: white;
+}
+#hh1{
+    text-align: center;
+    color: white;
+}
+h5{
+    text-align: center;
+    color: white;
+}
+input{
+    width: 500px;
+    height: 30px;
+    margin-left: 500px;
+}
+#back{
+    background-image: url("/images/back.jfif");
+    background-size: cover;
+}
+button{
+    background-color: green;
+    color: white;
+    font-size: 20px;
+    margin-left: 650px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: green;
+    
+}
+p{
+    color: rgb(71, 57, 57);
+    text-align: center;
+    font-size: 30px;
+}
+#p1{
+    font-size: 17px;
+    text-align: center;
+}
+#img1{
+    width: 200px;
+    height: 80px;
+    margin-left: 500px;
+    
+}
+#img2{
+    width: 165px;
+    height: 55px;
+    margin-bottom: 12px;
+}
