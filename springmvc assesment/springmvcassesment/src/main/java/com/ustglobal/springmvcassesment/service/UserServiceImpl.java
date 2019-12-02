@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ustglobal.springmvcassesment.dao.UserDAO;
+import com.ustglobal.springmvcassesment.dto.OrderBean;
 import com.ustglobal.springmvcassesment.dto.ProductBean;
 import com.ustglobal.springmvcassesment.dto.UserBean;
 
@@ -31,5 +32,10 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public ProductBean searchProduct(int pid) {
 		return dao.searchProduct(pid);
+	}
+
+	@Override
+	public int orderProduct(OrderBean bean) {
+		return dao.orderProduct(bean);
 	}
 }

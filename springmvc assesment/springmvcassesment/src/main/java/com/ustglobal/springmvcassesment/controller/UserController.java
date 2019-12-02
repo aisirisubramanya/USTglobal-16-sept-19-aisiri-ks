@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
+import com.ustglobal.springmvcassesment.dto.OrderBean;
 import com.ustglobal.springmvcassesment.dto.ProductBean;
 import com.ustglobal.springmvcassesment.dto.UserBean;
 import com.ustglobal.springmvcassesment.service.UserService;
@@ -78,6 +79,18 @@ public class UserController {
 		return "home";
 	}//end of home()
 	
+	@GetMapping("/search")
+	public String search(@RequestParam("id")int id,ModelMap map) {
+		ProductBean bean=service.searchProduct(id);
+		if(bean==null) {
+			map.addAttribute("msg","Data not found");
+		}
+		else {
+			map.addAttribute("bean",bean);
+		}
+		return "home";
+	}
+	
 	@GetMapping("/changepassword")
 	public String changePassword(HttpServletRequest request) {
 		HttpSession session=request.getSession(false);
@@ -106,15 +119,19 @@ public class UserController {
 		return "login";
 	}//end of logout()
 	
-	@GetMapping("/search")
-	public String search(@RequestParam("pid")int pid,ModelMap map) {
-		ProductBean bean=service.searchProduct(pid);
-		if(bean==null) {
-			map.addAttribute("msg","Data not found");
-		}
-		else {
-			map.addAttribute("bean",bean);
-		}
+	@GetMapping("/order")
+	public String orderPage() {
+		return "order";
+	}//end of registerPage().
+
+	@PostMapping("/order")
+	public String order(OrderBean bean,ModelMap map) {
+		
+		int check=service.orderProduct(bean);
+		
+			map.addAttribute("msg","You are order is confirmed and Id is "+check);
+	
+		
 		return "home";
-	}
+	}//end of register()
 }

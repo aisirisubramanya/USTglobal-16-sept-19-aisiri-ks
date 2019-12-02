@@ -1,5 +1,6 @@
 package com.ustglobal.springmvcassesment.dao;
 
+import com.ustglobal.springmvcassesment.dto.OrderBean;
 import com.ustglobal.springmvcassesment.dto.ProductBean;
 import com.ustglobal.springmvcassesment.dto.UserBean;
 
@@ -8,6 +9,6 @@ public interface UserDAO {
 	public int register(UserBean bean);
 	public ProductBean searchProduct(int pid);
 	public boolean changePassword(int id,String password);
-//	public UserBean orderProduct(int pid);
+	public int orderProduct(OrderBean bean);
 	public UserBean products(int id);
 }

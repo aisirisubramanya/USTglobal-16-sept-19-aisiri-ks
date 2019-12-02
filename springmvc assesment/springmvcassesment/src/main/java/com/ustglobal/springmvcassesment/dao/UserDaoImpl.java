@@ -9,6 +9,7 @@ import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
+import com.ustglobal.springmvcassesment.dto.OrderBean;
 import com.ustglobal.springmvcassesment.dto.ProductBean;
 import com.ustglobal.springmvcassesment.dto.UserBean;
 
@@ -74,6 +75,25 @@ public class UserDaoImpl implements UserDAO{
 	public UserBean products(int id) {
 		EntityManager manager=factory.createEntityManager();
 		return manager.find(UserBean.class, id);
+	}
+
+	@Override
+	public int orderProduct(OrderBean bean) {
+
+		EntityManager manager=factory.createEntityManager();
+		EntityTransaction transaction=manager.getTransaction();
+		transaction.begin();
+		try {
+			manager.persist(bean);
+			transaction.commit();
+
+			return bean.getOid();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+
+			return -1;
+		}		
 	}
 
 }

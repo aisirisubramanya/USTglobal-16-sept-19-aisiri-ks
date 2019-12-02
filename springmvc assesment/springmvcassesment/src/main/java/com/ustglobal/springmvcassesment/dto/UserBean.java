@@ -10,10 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
+
 
 
 @Entity
@@ -79,4 +82,14 @@ public class UserBean {
 		this.product = product;
 	}
 	
+	@OneToMany(mappedBy = "userBean")
+	private List<OrderBean> orderBean;
+
+	public List<OrderBean> getOrderBean() {
+		return orderBean;
+	}
+
+	public void setOrderBean(List<OrderBean> orderBean) {
+		this.orderBean = orderBean;
+	}
 }

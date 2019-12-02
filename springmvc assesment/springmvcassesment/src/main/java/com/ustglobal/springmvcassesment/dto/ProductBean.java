@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -47,6 +48,15 @@ public class ProductBean {
 	}
 	public void setUser(List<UserBean> user) {
 		this.user = user;
+	}
+	
+	@OneToMany(mappedBy = "productBean")
+	private List<OrderBean> orderBean;
+	public List<OrderBean> getOrderBean() {
+		return orderBean;
+	}
+	public void setOrderBean(List<OrderBean> orderBean) {
+		this.orderBean = orderBean;
 	}
 	
 }

@@ -19,7 +19,7 @@
 	<a href="./changepassword">change password</a>
 	<a href="./logout" style="float: right;">logout</a>
 	<h2>
-		Welcome<%=bean.getName()%></h2>
+		Welcome <%=bean.getName()%></h2>
 	<fieldset>
 		<legend>Search Product</legend>
 		<form action="./search">
@@ -34,7 +34,7 @@
 		</form>
 	</fieldset>
 	<%
-		ProductBean productBean=(ProductBean) session.getAttribute("productBean");
+		ProductBean productBean=(ProductBean) request.getAttribute("bean");
 	%>
 	<%
 		if (productBean != null) {
@@ -49,6 +49,7 @@
 		<tr>
 			<td><%=productBean.getName()%></td>
 			<td><%=productBean.getPrice()%></td>
+			<td><button>buy</button>
 		</tr>
 	</table>
 
