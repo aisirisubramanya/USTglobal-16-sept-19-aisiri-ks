@@ -1,0 +1,19 @@
+<table class="table book-class table-bordered table-striped table-light mt-5 mb-5 col-md-8 offset-2">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Total</th>
+        <th scope="col">Total with Gst</th>
+        
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+       <td>{{order.id}}</td>
+       <td>{{order.total}}</td>
+       <td>{{order.gstTotal}}</td>
+            </tr>
+    </tbody>
+  </table>
+  

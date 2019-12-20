@@ -1,0 +1,39 @@
+<div class="col-md-4 offset-3 card card-body mt-5 mb-5">
+    <form action="" [formGroup]="form" (ngSubmit)="addProduct(form)">
+        <h1 class="text-center bg-dark text-light">Product Details</h1>
+        <div class="form-group">
+            <input type="text" name="name" formControlName="name" id="name" class="form-control" placeholder="Enter Product Name">
+            <div *ngIf="name.touched && name.invalid">
+                <p *ngIf="name.errors.required" style="color: red;">* This Field Is Required</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="text" name="category" formControlName="category" id="category" class="form-control" placeholder="Enter Product category">
+            <div *ngIf="category.touched && category.invalid">
+                <p *ngIf="category.errors.required" style="color: red;">* This Field Is Required</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="text" name="company" formControlName="company" id="company" class="form-control" placeholder="Enter Product company">
+            <div *ngIf="company.touched && company.invalid">
+                <p *ngIf="company.errors.required" style="color: red;">* This Field Is Required</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="number" name="quantity" formControlName="quantity" id="quantity" class="form-control" placeholder="Enter quantity">
+            <div *ngIf="quantity.touched && quantity.invalid">
+                <p *ngIf="quantity.errors.required" style="color: red;">* This Field Is Required</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="number" name="price" formControlName="price" id="price" class="form-control" placeholder="Enter price">
+            <div *ngIf="quantity.touched && quantity.invalid">
+                <p *ngIf="quantity.errors.required" style="color: red;">* This Field Is Required</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit" [disabled]="form.invalid" class="btn btn-outline-success float-right">
+        </div>
+    
+    </form>
+</div>
